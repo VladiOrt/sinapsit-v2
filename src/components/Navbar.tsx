@@ -6,18 +6,17 @@ import logo from "@/assets/logo.svg";
 
 const navLinks = [
   { href: "#servicios", label: "Servicios" },
-  { href: "#proceso", label: "Procesos" },
-  { href: "#productos", label: "Productos" },
+  { href: "#proceso", label: "Procesos" }
 ];
+
+const CONTACT_WHATSAPP_URL = "https://wa.me/5215575655412";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -55,14 +54,19 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* CTA Button */}
-        <Button 
-          variant="default" 
-          size="default"
-          className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6"
+        <a
+          href={CONTACT_WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Contactanos
-        </Button>
+          <Button
+            variant="default"
+            size="default"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6"
+          >
+            Contactanos
+          </Button>
+        </a>
       </nav>
 
       {/* Mobile Navbar */}
@@ -106,13 +110,21 @@ export const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button 
-                variant="default" 
-                size="lg" 
-                className="w-full mt-2 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full"
+
+              <a
+                href={CONTACT_WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
-                Contactanos
-              </Button>
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="w-full mt-2 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full"
+                >
+                  Contactanos
+                </Button>
+              </a>
             </div>
           </motion.div>
         )}

@@ -70,7 +70,7 @@ export const Hero = () => {
               size="xl"
               className="rounded-full border-foreground/30 hover:bg-foreground/10 hover:border-foreground/50 px-8"
             >
-              Nuestras soluciones
+              <a href="#servicios" className="text-foreground">Nuestras soluciones</a>
             </Button>
           </motion.div>
         </motion.div>

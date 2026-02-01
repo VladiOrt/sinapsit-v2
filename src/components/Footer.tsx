@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Twitter, Mail,Instagram,MessageCircle  } from "lucide-react";
 
 const footerLinks = {
   servicios: [
@@ -11,16 +11,29 @@ const footerLinks = {
   ],
   empresa: [
     { label: "Nosotros", href: "#nosotros" },
-    { label: "Proceso", href: "#proceso" },
-    { label: "Contacto", href: "#contacto" },
+    { label: "Proceso", href: "#proceso" }
   ],
 };
 
 const socialLinks = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Mail, href: "#", label: "Email" },
+  {
+    icon: Mail,
+    href: "mailto:vladi_ortega@hotmail.com",
+    label: "Email",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/sinaps_it/",
+    label: "Instagram",
+  },
+   {
+    icon: MessageCircle,
+    href: "https://wa.me/5215575655412",
+    label: "WhatsApp",
+  },
 ];
+
+import LogoSinapsit from "../../src/assets/logo.svg";
 
 export const Footer = () => {
   return (
@@ -36,7 +49,7 @@ export const Footer = () => {
               transition={{ duration: 0.6 }}
             >
               <span className="text-2xl font-bold gradient-text mb-4 block">
-                SINAPSIT
+                <img src={LogoSinapsit} alt="Sinapsit Logo" className="h-12 inline-block" />
               </span>
               <p className="text-muted-foreground max-w-sm mb-6">
                 Soluciones tecnológicas que escalan. Automatización, desarrollo 

@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const WHATSAPP_URL = "https://wa.me/5215575655412";
+const EMAIL_URL = "mailto:vladi_ortega@hotmail.com";
+
 export const CTA = () => {
   return (
     <section className="py-24 md:py-32 relative">
@@ -39,14 +42,27 @@ export const CTA = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero" size="xl" className="group">
-                  <Calendar className="w-5 h-5" />
-                  Agenda tu llamada
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button variant="heroOutline" size="xl">
-                  Escríbenos
-                </Button>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="hero" size="xl" className="group">
+                    <Calendar className="w-5 h-5" />
+                    Agenda tu llamada
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+                
+                <a
+                  href={EMAIL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="heroOutline" size="xl">
+                    Escríbenos
+                  </Button>
+                </a>
               </div>
             </motion.div>
           </div>
