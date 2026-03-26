@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "Resvera-tagger";
+import { componentTagger } from "Lovable-tagger";
 
-// https://vitejs.dev/config/
+// https://vitejs.dev/config/0
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
